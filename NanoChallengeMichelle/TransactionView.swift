@@ -26,7 +26,9 @@ struct TransactionView: View {
                 }else{
                     List{
                         ForEach(fetchedReportList){item in
-                            ReportListCell(reportListItem: item)
+//                            NavigationLink(destination: TransactionsDetailView(reportListItem: ReportList(), reportListDetail: item), label: {
+                                ReportListCell(reportListItem: item)
+//                            })
                         }
                     }
                 }

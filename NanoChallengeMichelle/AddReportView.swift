@@ -161,9 +161,6 @@ struct AddReportView: View {
                                 .bold().foregroundColor(.white).frame(width: 200, height: 45).background(.red).cornerRadius(20)
                         }
                     })
-//                        .tint(.yellow)
-//                        .buttonStyle(.bordered)
-//                        .buttonBorderShape(.roundedRectangle)
                 }
             }
         }
