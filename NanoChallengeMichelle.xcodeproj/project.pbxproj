@@ -23,7 +23,6 @@
 		9A20591C282EBDE300F8E165 /* AddReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A20591B282EBDE300F8E165 /* AddReportView.swift */; };
 		9A20591E282EBF3A00F8E165 /* ReportListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A20591D282EBF3A00F8E165 /* ReportListCell.swift */; };
 		9A205920282EC09200F8E165 /* ReportListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A20591F282EC09200F8E165 /* ReportListViewModel.swift */; };
-		9A205922282EC13000F8E165 /* CD_CRUD_MVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A205921282EC13000F8E165 /* CD_CRUD_MVVM.swift */; };
 		9A205924282EC16100F8E165 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A205923282EC16100F8E165 /* Persistence.swift */; };
 		9A205927282EC1A700F8E165 /* CD_CRUD_MVVM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A205925282EC1A700F8E165 /* CD_CRUD_MVVM.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -65,7 +64,6 @@
 		9A20591B282EBDE300F8E165 /* AddReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportView.swift; sourceTree = "<group>"; };
 		9A20591D282EBF3A00F8E165 /* ReportListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListCell.swift; sourceTree = "<group>"; };
 		9A20591F282EC09200F8E165 /* ReportListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListViewModel.swift; sourceTree = "<group>"; };
-		9A205921282EC13000F8E165 /* CD_CRUD_MVVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CD_CRUD_MVVM.swift; sourceTree = "<group>"; };
 		9A205923282EC16100F8E165 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		9A205926282EC1A700F8E165 /* CD_CRUD_MVVM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CD_CRUD_MVVM.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +129,6 @@
 				9A20591B282EBDE300F8E165 /* AddReportView.swift */,
 				9A20591D282EBF3A00F8E165 /* ReportListCell.swift */,
 				9A20591F282EC09200F8E165 /* ReportListViewModel.swift */,
-				9A205921282EC13000F8E165 /* CD_CRUD_MVVM.swift */,
 				9A205923282EC16100F8E165 /* Persistence.swift */,
 				9A205925282EC1A700F8E165 /* CD_CRUD_MVVM.xcdatamodeld */,
 			);
@@ -299,7 +296,6 @@
 				9A20591C282EBDE300F8E165 /* AddReportView.swift in Sources */,
 				9A205916282EBC2400F8E165 /* PieSliceView.swift in Sources */,
 				9A2058E2282EB99500F8E165 /* NanoChallengeMichelleApp.swift in Sources */,
-				9A205922282EC13000F8E165 /* CD_CRUD_MVVM.swift in Sources */,
 				9A205924282EC16100F8E165 /* Persistence.swift in Sources */,
 				9A205920282EC09200F8E165 /* ReportListViewModel.swift in Sources */,
 				9A205910282EBA8E00F8E165 /* TransactionView.swift in Sources */,

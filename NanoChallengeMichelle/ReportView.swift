@@ -21,7 +21,14 @@ struct ReportView: View {
             ScrollView{
                 VStack{
                     
-//                    MediumPieView(values: [Double(totalBiayaMakanan()), Double(totalBiayaService()), Double(totalBiayaPajak()),Double(totalDiskon())], colors: [Color("Red"), Color("Orange"), Color("Yellow"), Color("Green")], backgroundColor: .clear).frame(height: 360).padding()
+                    if fetchedReportList.isEmpty {
+                        Image("emptyPie").resizable().aspectRatio(contentMode: .fit).frame(width: 300, height: 300)
+                        Text("What are you waiting for?").font(.system(size: 17)).multilineTextAlignment(.center).foregroundColor(Color(.secondaryLabel)).padding()
+                    }else{
+                        MediumPieView(values: [Double(totalBiayaMakanan()), Double(totalBiayaService()), Double(totalBiayaPajak()),Double(totalDiskon())], colors: [Color("Red"), Color("Orange"), Color("Yellow"), Color("Green")], backgroundColor: .clear).frame(height: 360).padding()
+                    }
+                    
+                    
                     
                     Text("Summary").bold().font(.system(size: 20)).padding()
 

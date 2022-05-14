@@ -154,17 +154,16 @@ struct AddReportView: View {
                         addView.toggle()
                     }, label: {
                         if reportListVM.reportListItem == nil {
-                            Text("Add Transaction")
-                                .frame(minWidth: 0,maxWidth: .infinity)
+                            Text("Add Transaction").bold().foregroundColor(.white).frame(width: 200, height: 45).background(.red).cornerRadius(20)
                         }
                         else{
                             Text("Edit Transaction")
-                                .frame(minWidth: 0,maxWidth: .infinity)
+                                .bold().foregroundColor(.white).frame(width: 200, height: 45).background(.red).cornerRadius(20)
                         }
                     })
-                        .tint(.yellow)
-                        .buttonStyle(.bordered)
-                        .buttonBorderShape(.roundedRectangle)
+//                        .tint(.yellow)
+//                        .buttonStyle(.bordered)
+//                        .buttonBorderShape(.roundedRectangle)
                 }
             }
         }

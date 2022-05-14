@@ -19,12 +19,18 @@ struct TransactionView: View {
     var body: some View {
         NavigationView{
             VStack{
-                List{
-                    ForEach(fetchedReportList){item in
-                        ReportListCell(reportListItem: item)
+                
+                if fetchedReportList.isEmpty {
+                    Image("emptyReport").resizable().aspectRatio(contentMode: .fit).frame(width: 300, height: 300)
+                    Text("Let's start ????").font(.system(size: 17)).multilineTextAlignment(.center).foregroundColor(Color(.secondaryLabel)).padding()
+                }else{
+                    List{
+                        ForEach(fetchedReportList){item in
+                            ReportListCell(reportListItem: item)
+                        }
                     }
                 }
-            }
+            }.navigationTitle("Transactions")
         }
     }
 }
