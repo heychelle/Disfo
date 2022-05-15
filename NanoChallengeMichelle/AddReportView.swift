@@ -74,6 +74,7 @@ struct AddReportView: View {
         NavigationView{
             ScrollView (.vertical, showsIndicators: false){
                 VStack{
+//                    Text("Add Transaction").bold().font(.system(.title)).padding(.bottom)
                     HStack (alignment: .center, spacing: 20){
                         Button(action: {
                             isFlaggingModeEnabled1.toggle()
@@ -139,14 +140,12 @@ struct AddReportView: View {
                             }
                         })
                     }
-                    Section{
+                    Section (footer: Text("Yuk tulis kesan kamu tentang makanan hari ini").font(.system(size: 10))){
                         TextInputField("Nama Makanan", text: $reportListVM.reportListNamaMakanan)
                         BiayaInputField("Biaya Makanan", biaya: $reportListVM.reportListBiayaMakanan)
                         BiayaInputField("Biaya Service", biaya: $reportListVM.reportListBiayaService)
                         BiayaInputField("Biaya Pajak", biaya: $reportListVM.reportListBiayaPajak)
                         BiayaInputField("Total Diskon", biaya: $reportListVM.reportListDiskon)
-                    }.padding(.horizontal)
-                    Section (footer: Text("Yuk tulis kesan kamu tentang makanan hari ini").font(.system(size: 10))){
                         TextEditor(text: $reportListVM.reportListNotes).padding().background(.gray.opacity(0.2)).cornerRadius(10).font(.system(size: 17))
                     }.padding(.horizontal)
                     Button(action: {
@@ -162,9 +161,8 @@ struct AddReportView: View {
                         }
                     })
                 }
-            }
+            }.navigationTitle(reportListVM.reportListItem == nil ? "Add Transaction" : "Edit Transaction")
         }
-        .navigationTitle($reportListVM.reportListItem == nil ? "Add Transaction" : "Edit Transaction")
     }
 
 }
