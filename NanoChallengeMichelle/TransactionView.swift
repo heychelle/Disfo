@@ -16,13 +16,14 @@ struct TransactionView: View {
     
     @State private var addView = false
     
+    
     var body: some View {
         NavigationView{
             VStack{
                 
                 if fetchedReportList.isEmpty {
-                    Image("emptyReport").resizable().aspectRatio(contentMode: .fit).frame(width: 300, height: 300)
-                    Text("Let's start ????").font(.system(size: 17)).multilineTextAlignment(.center).foregroundColor(Color(.secondaryLabel)).padding()
+                    Image("emptyReport").resizable().aspectRatio(contentMode: .fit).frame(width: 250, height: 250)
+                    Text("No reports added").fontWeight(.semibold).font(.system(size: 32)).multilineTextAlignment(.center).padding()
                 }else{
                     List{
                         ForEach(fetchedReportList){item in

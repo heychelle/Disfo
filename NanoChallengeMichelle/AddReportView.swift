@@ -70,12 +70,13 @@ struct AddReportView: View {
     @State var isFlaggingModeEnabled3 = false
     @State var isFlaggingModeEnabled4 = false
     
+    @State var dummyku: String = "DUMMY"
+    
     var body: some View {
         NavigationView{
             ScrollView (.vertical, showsIndicators: false){
                 VStack{
-//                    Text("Add Transaction").bold().font(.system(.title)).padding(.bottom)
-                    HStack (alignment: .center, spacing: 20){
+                    HStack (alignment: .center, spacing: 60){
                         Button(action: {
                             isFlaggingModeEnabled1.toggle()
                             print("SeafoodBtn")
@@ -86,7 +87,7 @@ struct AddReportView: View {
                             switch isFlaggingModeEnabled1 {
                                 case true:
                                 // Your image for when enabled.
-                                Image("Seafood").resizable().scaledToFit().frame(height: 80).background(.red).cornerRadius(16)
+                                Image("Seafood").resizable().scaledToFit().frame(height: 100).background(.red).cornerRadius(16)
                                 default:
                                 // Your image for when disabled.
                                 Image("Seafood").resizable().scaledToFit().frame(height: 80).background(.clear).cornerRadius(16)
@@ -101,14 +102,14 @@ struct AddReportView: View {
                             switch isFlaggingModeEnabled2 {
                                 case true:
                                 // Your image for when enabled.
-                                Image("Meat").resizable().scaledToFit().frame(height: 80).background(.red).cornerRadius(16)
+                                Image("Meat").resizable().scaledToFit().frame(height: 100).background(.red).cornerRadius(16)
                                 default:
                                 // Your image for when disabled.
                                 Image("Meat").resizable().scaledToFit().frame(height: 80).background(.clear).cornerRadius(16)
                             }
                         })
                     }
-                    HStack (alignment: .center, spacing: 20){
+                    HStack (alignment: .center, spacing: 60){
                         Button(action: { isFlaggingModeEnabled3.toggle()
                             print("PoultryBtn")
                             if isFlaggingModeEnabled3 == true{
@@ -118,7 +119,7 @@ struct AddReportView: View {
                             switch isFlaggingModeEnabled3 {
                                 case true:
                                 // Your image for when enabled.
-                                Image("Poultry").resizable().scaledToFit().frame(height: 80).background(.red).cornerRadius(16)
+                                Image("Poultry").resizable().scaledToFit().frame(height: 100).background(.red).cornerRadius(16)
                                 default:
                                 // Your image for when disabled.
                                 Image("Poultry").resizable().scaledToFit().frame(height: 80).background(.clear).cornerRadius(16)
@@ -133,23 +134,24 @@ struct AddReportView: View {
                             switch isFlaggingModeEnabled4 {
                                 case true:
                                 // Your image for when enabled.
-                                Image("Vegie").resizable().scaledToFit().frame(height: 80).background(.red).cornerRadius(16)
+                                Image("Vegie").resizable().scaledToFit().frame(height: 100).background(.red).cornerRadius(16)
                                 default:
                                 // Your image for when disabled.
                                 Image("Vegie").resizable().scaledToFit().frame(height: 80).background(.clear).cornerRadius(16)
                             }
                         })
                     }
-                    Section (footer: Text("Yuk tulis kesan kamu tentang makanan hari ini").font(.system(size: 10))){
-                        TextInputField("Nama Makanan", text: $reportListVM.reportListNamaMakanan)
-                        BiayaInputField("Biaya Makanan", biaya: $reportListVM.reportListBiayaMakanan)
-                        BiayaInputField("Biaya Service", biaya: $reportListVM.reportListBiayaService)
-                        BiayaInputField("Biaya Pajak", biaya: $reportListVM.reportListBiayaPajak)
-                        BiayaInputField("Total Diskon", biaya: $reportListVM.reportListDiskon)
+                    Section (footer: Text("Let's write your impressions about today's food").font(.system(size: 10)).padding(.bottom)){
+                        TextInputField("Food Name", text: $reportListVM.reportListNamaMakanan)
+                        BiayaInputField("Food Cost", biaya: $reportListVM.reportListBiayaMakanan)
+                        BiayaInputField("Service Cost", biaya: $reportListVM.reportListBiayaService)
+                        BiayaInputField("Tax Cost", biaya: $reportListVM.reportListBiayaPajak)
+                        BiayaInputField("Total Discount", biaya: $reportListVM.reportListDiskon)
                         TextEditor(text: $reportListVM.reportListNotes).padding().background(.gray.opacity(0.2)).cornerRadius(10).font(.system(size: 17))
                     }.padding(.horizontal)
                     Button(action: {
                         reportListVM.createReport(context: viewContext)
+                        print(reportListVM.reportListNotes)
                         addView.toggle()
                     }, label: {
                         if reportListVM.reportListItem == nil {

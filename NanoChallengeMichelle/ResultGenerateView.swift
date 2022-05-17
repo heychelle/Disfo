@@ -42,7 +42,7 @@ struct FoodResultView: View {
                     }
                 }
                     let randomLocation = location.randomElement()!
-                            Text(randomLocation == "online" ? "Order melalui delivery (online)" : "Order secara on-site (offline)").font(.system(size: 17)).multilineTextAlignment(.center).padding(.bottom)
+                            Text(randomLocation == "online" ? "Order by delivery (online)" : "Order directly to the place (offline)").font(.system(size: 17)).multilineTextAlignment(.center).padding(.bottom)
             }.navigationTitle("Results")
         }
     }

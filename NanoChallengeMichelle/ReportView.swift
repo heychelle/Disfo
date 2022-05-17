@@ -22,8 +22,8 @@ struct ReportView: View {
                 VStack{
                     
                     if fetchedReportList.isEmpty {
-                        Image("emptyPie").resizable().aspectRatio(contentMode: .fit).frame(width: 300, height: 300)
-                        Text("What are you waiting for?").font(.system(size: 17)).multilineTextAlignment(.center).foregroundColor(Color(.secondaryLabel)).padding()
+                        Image("emptyPieChart").resizable().aspectRatio(contentMode: .fit).frame(width: 300, height: 300)
+                        Text("You haven't added any reports").fontWeight(.semibold).font(.system(size: 30)).multilineTextAlignment(.center).padding()
                     }else{
                         MediumPieView(values: [Double(totalBiayaMakanan()), Double(totalBiayaService()), Double(totalBiayaPajak()),Double(totalDiskon())], colors: [Color("Red"), Color("Orange"), Color("Yellow"), Color("Green")], backgroundColor: .clear).frame(height: 360).padding()
                     }
@@ -36,7 +36,7 @@ struct ReportView: View {
                         RoundedRectangle(cornerRadius: 4)
                             .fill(Color("Red"))
                             .frame(width: 15, height: 15).padding(.leading)
-                        Text("Total Biaya Makanan").padding()
+                        Text("Food Cost").padding()
                         Spacer()
                         Text("\(Int(totalBiayaMakanan()))").padding().lineLimit(1).multilineTextAlignment(.leading)
                     }
@@ -44,7 +44,7 @@ struct ReportView: View {
                         RoundedRectangle(cornerRadius: 4)
                             .fill(Color("Orange"))
                             .frame(width: 15, height: 15).padding(.leading)
-                        Text("Total Biaya Service").padding()
+                        Text("Service Cost").padding()
                         Spacer()
                         Text("\(Int(totalBiayaService()))").padding().lineLimit(1).multilineTextAlignment(.leading)
                     }
@@ -52,7 +52,7 @@ struct ReportView: View {
                         RoundedRectangle(cornerRadius: 4)
                             .fill(Color("Yellow"))
                             .frame(width: 15, height: 15).padding(.leading)
-                        Text("Total Biaya Pajak").padding()
+                        Text("Tax Cost").padding()
                         Spacer()
                         Text("\(Int(totalBiayaPajak()))").padding().lineLimit(1).multilineTextAlignment(.leading)
                     }
@@ -77,11 +77,11 @@ struct ReportView: View {
                             reportListVM.reportListBiayaService = 0
                             reportListVM.reportListBiayaPajak = 0
                             reportListVM.reportListDiskon = 0
-                            reportListVM.reportListNotes = ""
+                            reportListVM.reportListNotes = " "
                             reportListVM.reportListItem = nil
                             addView.toggle()
                         }, label: {
-                            Label("Add Item",systemImage: "plus")
+                            Label("Add Item", systemImage: "plus").font(.title2)
                         })
                     }
                     .navigationTitle("Report")

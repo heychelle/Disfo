@@ -36,8 +36,12 @@ struct TransactionsDetailView: View {
                     }
                     Spacer()
                 }
-                
                 Text(reportListDetail?.notes ?? "").font(.system(size: 17)).fontWeight(.regular).lineLimit(15).multilineTextAlignment(.center).padding(.horizontal)
+//                Button(action: {
+//                    reportListVM.delete(report: reportListItem, context: viewContext)
+//                }, label: {
+//                        Text("Delete").bold().foregroundColor(.white).frame(width: 200, height: 45).background(.red).cornerRadius(20)
+//                })
             }.navigationTitle("Transaction Detail")
         }
     }

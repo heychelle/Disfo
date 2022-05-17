@@ -12,7 +12,11 @@ struct ReportListCell: View {
     @EnvironmentObject var reportListVM:ReportListViewModel
     @ObservedObject var reportListItem:ReportList
     
+    @FetchRequest(entity: ReportList.entity(), sortDescriptors: [NSSortDescriptor(key: "date", ascending: true)]) var fetchedReportList:FetchedResults<ReportList>
+    
     @State private var isEdit = false
+    @State private var showDetail: Bool = false
+    
     
     var body: some View {
         HStack (spacing: 10){
@@ -32,6 +36,7 @@ struct ReportListCell: View {
                 Label("Delete",systemImage: "trash")
             })
             Button(action: {
+                
                 reportListVM.reportListNamaMakanan = reportListItem.namaMakanan ?? ""
                 reportListVM.reportListBiayaMakanan = reportListItem.biayaMakanan
                 reportListVM.reportListBiayaService = reportListItem.biayaService
@@ -44,6 +49,15 @@ struct ReportListCell: View {
                 Label("Edit",systemImage: "pencil")
             })
                 .tint(.yellow)
-        }
+        }.contentShape(Rectangle())
+            .onTapGesture {
+                print("Show details for user")
+                self.showDetail.toggle()
+            }.sheet(isPresented: self.$showDetail) {
+//                TransactionsDetailView(reportListItem: ReportList(), reportListDetail: FetchedResults<ReportList>.Element)
+                ForEach(fetchedReportList){item in
+                    TransactionsDetailView(reportListItem: ReportList(), reportListDetail: item)
+                }
+            }
     }
 }
