@@ -51,7 +51,7 @@ struct OnBoardingView: View{
                 title: "Track", message: "Helps you keep a record of each of your meals, so that each food has a valuable meaning", imageName: "p2", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding
             )
             PageView(
-                title: "Memorable", message: "You can look back on your food discoveries, and maybe it can help you in the future", imageName: "p3", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
+                title: "Memorable", message: "You can look back on your food discoveries, and hopefully it can help you in the future", imageName: "p3", showsDismissButton: false, shouldShowOnboarding: $shouldShowOnboarding)
             PageView(
                 title: "Disfo", message: "Totally Worth Eat!", imageName: "Disfo", showsDismissButton: true, shouldShowOnboarding: $shouldShowOnboarding)
 

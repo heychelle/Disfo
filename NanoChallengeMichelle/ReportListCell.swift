@@ -19,10 +19,10 @@ struct ReportListCell: View {
     
     
     var body: some View {
-        HStack (spacing: 10){
+        HStack (spacing: 20){
             Image(reportListItem.jenisMakanan ?? "").resizable().scaledToFit().frame(height: 70).padding(.vertical, 5)
             VStack (alignment: .leading, spacing: 5){
-                Text(reportListItem.namaMakanan ?? "").fontWeight(.semibold).lineLimit(2).minimumScaleFactor(0.5)
+                Text(reportListItem.namaMakanan ?? "").font(.title3).fontWeight(.semibold).lineLimit(2).minimumScaleFactor(0.5)
                 Text(String(reportListItem.biayaMakanan)).font(.subheadline)
             }
         }
@@ -49,15 +49,16 @@ struct ReportListCell: View {
                 Label("Edit",systemImage: "pencil")
             })
                 .tint(.yellow)
-        }.contentShape(Rectangle())
-            .onTapGesture {
-                print("Show details for user")
-                self.showDetail.toggle()
-            }.sheet(isPresented: self.$showDetail) {
-//                TransactionsDetailView(reportListItem: ReportList(), reportListDetail: FetchedResults<ReportList>.Element)
-                ForEach(fetchedReportList){item in
-                    TransactionsDetailView(reportListItem: ReportList(), reportListDetail: item)
-                }
-            }
+        }
+//        contentShape(Rectangle())
+//            .onTapGesture {
+//                print("Show details for user")
+//                self.showDetail.toggle()
+//            }.sheet(isPresented: self.$showDetail) {
+////                TransactionsDetailView(reportListItem: ReportList(), reportListDetail: FetchedResults<ReportList>.Element)
+//                ForEach(fetchedReportList){item in
+//                    TransactionsDetailView(reportListItem: ReportList(), reportListDetail: item)
+//                }
+//            }
     }
 }

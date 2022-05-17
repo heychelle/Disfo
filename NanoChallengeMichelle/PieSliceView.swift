@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PieSliceView: View {
     var pieSliceData: PieSliceData
+    @Environment(\.colorScheme) var colorScheme
     
     var midRadians: Double {
         return Double.pi / 2.0 - (pieSliceData.startAngle + pieSliceData.endAngle).radians / 2.0
@@ -40,8 +41,7 @@ struct PieSliceView: View {
                         x: geometry.size.width * 0.5 * CGFloat(1.0 + 0.78 * cos(self.midRadians)),
                         y: geometry.size.height * 0.5 * CGFloat(1.0 - 0.78 * sin(self.midRadians))
                     )
-//                    .foregroundColor(reportListVM.reportListItem == nil ? Color.white : Color.black)
-                    .foregroundColor(Color.black)
+                    .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
             }
         }
         .aspectRatio(1, contentMode: .fit)

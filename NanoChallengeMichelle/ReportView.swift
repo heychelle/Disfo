@@ -25,7 +25,7 @@ struct ReportView: View {
                         Image("emptyPieChart").resizable().aspectRatio(contentMode: .fit).frame(width: 300, height: 300)
                         Text("You haven't added any reports").fontWeight(.semibold).font(.system(size: 30)).multilineTextAlignment(.center).padding()
                     }else{
-                        MediumPieView(values: [Double(totalBiayaMakanan()), Double(totalBiayaService()), Double(totalBiayaPajak()),Double(totalDiskon())], colors: [Color("Red"), Color("Orange"), Color("Yellow"), Color("Green")], backgroundColor: .clear).frame(height: 360).padding()
+                        MediumPieView(values: [Double(totalBiayaMakanan()), Double(totalBiayaService()), Double(totalBiayaPajak()),Double(totalDiskon())], colors: [Color("Red1"), Color("Red2"), Color("Red3"), Color("Red4")], backgroundColor: .clear).frame(height: 360).padding()
                     }
                     
                     
@@ -34,7 +34,7 @@ struct ReportView: View {
 
                     HStack{
                         RoundedRectangle(cornerRadius: 4)
-                            .fill(Color("Red"))
+                            .fill(Color("Red1"))
                             .frame(width: 15, height: 15).padding(.leading)
                         Text("Food Cost").padding()
                         Spacer()
@@ -42,7 +42,7 @@ struct ReportView: View {
                     }
                     HStack{
                         RoundedRectangle(cornerRadius: 4)
-                            .fill(Color("Orange"))
+                            .fill(Color("Red2"))
                             .frame(width: 15, height: 15).padding(.leading)
                         Text("Service Cost").padding()
                         Spacer()
@@ -50,7 +50,7 @@ struct ReportView: View {
                     }
                     HStack{
                         RoundedRectangle(cornerRadius: 4)
-                            .fill(Color("Yellow"))
+                            .fill(Color("Red3"))
                             .frame(width: 15, height: 15).padding(.leading)
                         Text("Tax Cost").padding()
                         Spacer()
@@ -58,7 +58,7 @@ struct ReportView: View {
                     }
                     HStack{
                         RoundedRectangle(cornerRadius: 4)
-                            .fill(Color("Green"))
+                            .fill(Color("Red4"))
                             .frame(width: 15, height: 15).padding(.leading)
                         Text("Total Discount").padding()
                         Spacer()

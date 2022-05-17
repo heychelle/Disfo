@@ -159,7 +159,7 @@ struct AddReportView: View {
                         }
                         else{
                             Text("Edit Transaction")
-                                .bold().foregroundColor(.white).frame(width: 200, height: 45).background(.red).cornerRadius(20)
+                                .bold().foregroundColor(.white).frame(width: 200, height: 45).background(Color("Red")).cornerRadius(16)
                         }
                     })
                 }
