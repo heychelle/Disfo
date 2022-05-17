@@ -34,9 +34,8 @@ struct ReportListCell: View {
                 reportListVM.delete(report: reportListItem, context: viewContext)
             }, label: {
                 Label("Delete",systemImage: "trash")
-            })
+            }).tint(Color("Red"))
             Button(action: {
-                
                 reportListVM.reportListNamaMakanan = reportListItem.namaMakanan ?? ""
                 reportListVM.reportListBiayaMakanan = reportListItem.biayaMakanan
                 reportListVM.reportListBiayaService = reportListItem.biayaService
@@ -48,7 +47,7 @@ struct ReportListCell: View {
             }, label: {
                 Label("Edit",systemImage: "pencil")
             })
-                .tint(.yellow)
+                .tint(Color("Yellow"))
         }
 //        contentShape(Rectangle())
 //            .onTapGesture {
