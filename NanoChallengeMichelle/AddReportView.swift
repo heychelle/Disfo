@@ -75,6 +75,7 @@ struct AddReportView: View {
     var body: some View {
         NavigationView{
             ScrollView (.vertical, showsIndicators: false){
+                
                 VStack{
                     HStack (alignment: .center, spacing: 60){
                         Button(action: {
@@ -162,6 +163,16 @@ struct AddReportView: View {
                                 .bold().foregroundColor(.white).frame(width: 200, height: 45).background(Color("Red")).cornerRadius(16)
                         }
                     })
+                }.onAppear{
+                    if reportListVM.reportListjenisMakanan == "Seafood"{
+                        isFlaggingModeEnabled1 = true
+                    }else if reportListVM.reportListjenisMakanan == "Meat"{
+                        isFlaggingModeEnabled2 = true
+                    }else if reportListVM.reportListjenisMakanan == "Poultry"{
+                        isFlaggingModeEnabled3 = true
+                    }else if reportListVM.reportListjenisMakanan == "Vegie"{
+                        isFlaggingModeEnabled4 = true
+                    }
                 }
             }.navigationTitle(reportListVM.reportListItem == nil ? "Add Transaction" : "Edit Transaction")
         }

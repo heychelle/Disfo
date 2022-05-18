@@ -36,6 +36,7 @@ struct ReportListCell: View {
                 Label("Delete",systemImage: "trash")
             }).tint(Color("Red"))
             Button(action: {
+                reportListVM.reportListjenisMakanan = reportListItem.jenisMakanan ?? ""
                 reportListVM.reportListNamaMakanan = reportListItem.namaMakanan ?? ""
                 reportListVM.reportListBiayaMakanan = reportListItem.biayaMakanan
                 reportListVM.reportListBiayaService = reportListItem.biayaService
