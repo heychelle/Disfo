@@ -18,7 +18,7 @@ struct ReportView: View {
     
     var body: some View {
         NavigationView{
-            ScrollView{
+            ScrollView (.vertical, showsIndicators: false){
                 VStack{
                     
                     if fetchedReportList.isEmpty {

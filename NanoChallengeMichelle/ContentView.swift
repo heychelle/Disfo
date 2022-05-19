@@ -78,7 +78,7 @@ struct PageView: View{
                 Button(action: {
                     shouldShowOnboarding.toggle()
                 }, label: {
-                    Text("Get Started").bold().foregroundColor(.white).frame(width: 200, height: 50).background(.red).cornerRadius(20)
+                    Text("Get Started").bold().foregroundColor(.white).frame(width: 200, height: 50).background(Color("Red")).cornerRadius(20)
                 })
             }
         }.onAppear()

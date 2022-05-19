@@ -88,10 +88,10 @@ struct AddReportView: View {
                             switch isFlaggingModeEnabled1 {
                                 case true:
                                 // Your image for when enabled.
-                                Image("Seafood").resizable().scaledToFit().frame(height: 100).background(.red).cornerRadius(16)
+                                Image("Seafood").resizable().scaledToFit().frame(height: 90).background(Color("Red")).cornerRadius(16)
                                 default:
                                 // Your image for when disabled.
-                                Image("Seafood").resizable().scaledToFit().frame(height: 80).background(.clear).cornerRadius(16)
+                                Image("Seafood").resizable().scaledToFit().frame(height: 90).background(.clear).cornerRadius(16)
                             }
                         })
                         Button(action: { isFlaggingModeEnabled2.toggle()
@@ -103,10 +103,10 @@ struct AddReportView: View {
                             switch isFlaggingModeEnabled2 {
                                 case true:
                                 // Your image for when enabled.
-                                Image("Meat").resizable().scaledToFit().frame(height: 100).background(.red).cornerRadius(16)
+                                Image("Meat").resizable().scaledToFit().frame(height: 90).background(Color("Red")).cornerRadius(16)
                                 default:
                                 // Your image for when disabled.
-                                Image("Meat").resizable().scaledToFit().frame(height: 80).background(.clear).cornerRadius(16)
+                                Image("Meat").resizable().scaledToFit().frame(height: 90).background(.clear).cornerRadius(16)
                             }
                         })
                     }
@@ -120,10 +120,10 @@ struct AddReportView: View {
                             switch isFlaggingModeEnabled3 {
                                 case true:
                                 // Your image for when enabled.
-                                Image("Poultry").resizable().scaledToFit().frame(height: 100).background(.red).cornerRadius(16)
+                                Image("Poultry").resizable().scaledToFit().frame(height: 90).background(Color("Red")).cornerRadius(16)
                                 default:
                                 // Your image for when disabled.
-                                Image("Poultry").resizable().scaledToFit().frame(height: 80).background(.clear).cornerRadius(16)
+                                Image("Poultry").resizable().scaledToFit().frame(height: 90).background(.clear).cornerRadius(16)
                             }
                         })
                         Button(action: { isFlaggingModeEnabled4.toggle()
@@ -135,10 +135,10 @@ struct AddReportView: View {
                             switch isFlaggingModeEnabled4 {
                                 case true:
                                 // Your image for when enabled.
-                                Image("Vegie").resizable().scaledToFit().frame(height: 100).background(.red).cornerRadius(16)
+                                Image("Vegie").resizable().scaledToFit().frame(height: 90).background(Color("Red")).cornerRadius(16)
                                 default:
                                 // Your image for when disabled.
-                                Image("Vegie").resizable().scaledToFit().frame(height: 80).background(.clear).cornerRadius(16)
+                                Image("Vegie").resizable().scaledToFit().frame(height: 90).background(.clear).cornerRadius(16)
                             }
                         })
                     }
@@ -156,7 +156,7 @@ struct AddReportView: View {
                         addView.toggle()
                     }, label: {
                         if reportListVM.reportListItem == nil {
-                            Text("Add Transaction").bold().foregroundColor(.white).frame(width: 200, height: 45).background(.red).cornerRadius(20)
+                            Text("Add Transaction").bold().foregroundColor(.white).frame(width: 200, height: 45).background(Color("Red")).cornerRadius(20)
                         }
                         else{
                             Text("Edit Transaction")
